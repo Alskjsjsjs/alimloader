@@ -39,8 +39,7 @@ TextBox.FocusLost:Connect(function(enter)
             wait(1)
             ScreenGui:Destroy()
             -- Muat script utama di sini:
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/username/repo/main/mainscript.lua"))()
-        else
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/username/alimloader/main/loader.lua"))()
             Status.Text = "Key Salah"
         end
     end
