@@ -1,18 +1,12 @@
-if TextBox.Text == key then
-    Status.Text = "Key Accepted"
-    print("Key accepted, loading mainscript.lua...")
-    wait(1)
-    ScreenGui:Destroy()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Alskjsjsjs/alimloader/main/mainscript.lua"))()
-else
-    Status.Text = "Key Salah"
+local player = game.Players.LocalPlayer
+
+-- Auto collect bond item
+while true do
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v.Name == "Bond" and v:IsA("TouchTransmitter") then
+            firetouchinterest(player.Character.HumanoidRootPart, v.Parent, 0)
+            firetouchinterest(player.Character.HumanoidRootPart, v.Parent, 1)
+        end
+    end
+    task.wait(2)
 end
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-local LocalPlayer = Players.LocalPlayer
-
--- Pastikan karakter sudah tersedia
-local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-
--- Pastikan HumanoidRootPart tersedia
-local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
