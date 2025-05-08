@@ -1,8 +1,3 @@
-if game.PlaceId ~= 17090350537 then
-    game.Players.LocalPlayer:Kick("Script ini hanya untuk game Dead Rails.")
-    return
-end
-
 -- UI Login dengan key check
 local key = "Alimkey"
 local player = game.Players.LocalPlayer
@@ -38,8 +33,8 @@ TextBox.FocusLost:Connect(function(enter)
             Status.Text = "Key Accepted"
             wait(1)
             ScreenGui:Destroy()
-            -- Muat script utama di sini:
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/username/alimloader/main/loader.lua"))()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Alskjsjsjs/alimloader/main/mainscript.lua"))()
+        else
             Status.Text = "Key Salah"
         end
     end
